@@ -16,11 +16,11 @@ before_script:
 script:
 - docker --version # print the version for logging
 - docker build -t simple-node .
-- docker tag simple-node YOUR_DOCKER_HUB/simple-node:latest
+- docker tag simple-node koneahmed/simple-node:latest
 
 after_success:
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-- docker push YOUR_DOCKER_HUB/simple-node
+- docker push koneahmed/simple-node
 
 # En supposant que le fichier .travis.yml se trouve dans le répertoire du projet et qu'il existe un sous-répertoire distinct pour chaque service.
 # Utilisez les commandes `docker-compose` ou les commandes `docker build` individuelles.
